@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../DevPagestyle.css">
+    <title>Scifi church</title>
+    <link rel="icon" href="../images/ComissionedIconOutHome.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div class="main-container-project">
+ <header>
+    
+    <nav class="navbar">
+        <ul class="list">           
+            <li class="list-item"><a class="code-link" href="../../aboutMe.html"><div class="code-link-container">Me</div></a></li>
+            <li class="list-item">
+                <div class="home-icon">
+                    <a href="../DevHomepage.html">
+                        <img class="home-icon-pink" src="../../images/ComissionedIconOutHome.webp" alt="homepage">
+                        <img class="home-icon-yellow" src="../../images/ComissionedIconOnHome.webp" alt="homepage">
+                    </a>
+                </div>
+            </li>
+            <li class="list-item">
+                <div class="project-dropdown">
+                    <Button class="dropdown-button">Projects <i class="fa fa-caret-down"></i></Button>
+                    <ul class="project-list">
+                        <li class="project-list-item"><a class="project-link" href="ScifiChurch.html">Project 1</a></li>
+                        <li class="project-list-item"><a class="project-link" href="">Project 2</a></li>
+                        <li class="project-list-item"><a class="project-link" href="">Project 3</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </nav>
+ </header>
+ <section class="project-sections" id="right-section">
+    <div class="project-content-container" id="left-container">
+        <h2 class="project-content-title">Concept phase</h2>
+        <p class="project-content-text">The brief was a two-week assignment: build an installation at Katoenhuis where the visitor feels like a conductor and follows the intensity of the music. It had to work as a standalone experience for at least one visitor while staying musically in sync with the other installations, with the visuals allowed to differ so people would want to try them all. The stated goal was that the visitor should feel like a conductor the moment they pick up the baton. The main anticipated challenges were timing light and visuals to the audio, signalling to visitors which movements suit which moments, communicating when the music intensifies or calms, and avoiding latency.</p>
+        <a href="https://github.com/PennydeBoer/Katoenhuis" class="project-content-text" id="github-link">
+            <i class="icon-github">&#xf09b;</i>
+        </a>
+    </div>
+ </section>
+ <section class="project-sections" id="middle-section">
+    <div class="project-content-container" id="middle-container">
+        <h2 class="project-content-title">Final Product</h2>
+        <figure class="project-content-figure-container">
+            
+        </figure>
+        
+    </div>
+ </section>
+ <section class="project-sections" id="left-section">
+    <div class="project-content-container" id="right-container">
+        <h2 class="project-content-title">Process</h2>
+        <p class="project-content-text">Days 1–2: The first day went into trying to set up the ZED 2i motion camera, and only on day two did it turn out the wrong cable was being used. In the meantime an Xbox Kinect was set up instead, but its hand tracking proved too buggy to rely on. Once someone pointed out the ZED 2i needs a special cable, it worked, and after debugging some settings in the Unity samples the build could start the next day. </p>
+        <p class="project-content-text">Day 3: With no prior experience in object tracking, the tracking caused too many problems, so the project pivoted to coding visuals driven by sound instead. github</p>
+        <figure class="project-content-figure-container">
+            <video src="../../images/20260311_150725.webm" loop muted autoplay class="project-gif"></video>
+        </figure>
+        <p class="project-content-text">Day 4: Teacher-provided code was extended with values controlling shape and color, mapping red to bass, green to peak and blue to 1 so the shader's color shifts with the music; the shader uses multiply nodes to intensify the color. Two snags came up: Unity's camera disables post-processing, so the color emission wasn't visible in the game scene, and flipping the shaders (originally meant to make the plane glow) gave a much better effect. Confidence in the sound-driven visuals stayed limited because testing had to go through a virtual audio cable. </p>
+        <p class="project-content-text">Days 4–5: Hand tracking still wouldn't work because the MediaPipe solutions were deprecated, so it was handed to a teammate to do in TouchDesigner.</p>
+    </div>
+ </section>
+ </div>   
+ 
+</body>
+</html>
