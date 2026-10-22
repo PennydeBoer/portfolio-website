@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../DevPagestyle.css">
     <title>Scifi church</title>
-    <link rel="icon" href="../images/ComissionedIconOutHome.webp">
+    <link rel="icon" href="../../images/ComissionedIconOutHome.webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
@@ -29,11 +29,14 @@
             <li class="list-item">
                 <div class="project-dropdown">
                     <Button class="dropdown-button">Projects <i class="fa fa-caret-down"></i></Button>
-                    <ul class="project-list">
-                        <li class="project-list-item"><a class="project-link" href="ScifiChurch.html">Project 1</a></li>
-                        <li class="project-list-item"><a class="project-link" href="">Project 2</a></li>
-                        <li class="project-list-item"><a class="project-link" href="">Project 3</a></li>
-                    </ul>
+                        <ul class="project-list">
+                           <li class="project-list-item"><a class="project-link" href="TMoCR.html">Current Project</a></li>
+                           <li class="project-list-item"><a class="project-link" href="GalacticRicochet.html">Galactic ricochet</a></li>
+                           <li class="project-list-item"><a class="project-link" href="ScifiChurch.html">Scifi church</a></li>
+                           <li class="project-list-item"><a class="project-link" href="CPPBasic.html">C++ Basics</a></li>
+                           <li class="project-list-item"><a class="project-link" href="VerticalSlice.html">Vertical Slice</a></li>
+                           <li class="project-list-item"><a class="project-link" href="TowerDefense.html">Tower defense</a></li>
+                        </ul>
                 </div>
             </li>
         </ul>
@@ -52,21 +55,24 @@
     <div class="project-content-container" id="middle-container">
         <h2 class="project-content-title">Final Product</h2>
         <figure class="project-content-figure-container">
-            
+              <video src="../../images/20260311_150725.webm" controls class="project-gif" id="project-video"></video>
         </figure>
-        
+        <p class="project-content-text"> We presented the church with audio reactive visuals, however we couldnt connect the sensor since our setup was too far from the audio booth.</p>
+        <p class="project-content-text"> I also made a randomized number clock but we ended up not using it due to it not really fitting and a group bailing on the idea that connected it.</p>
+        <h4 class="learning-title"> What I learned from this project </h4>
+        <p class="project-content-text">I learned to work in a team, how to read and modify scripts with bad notation and to comprimise when things don't work out. </p>
     </div>
  </section>
  <section class="project-sections" id="left-section">
     <div class="project-content-container" id="right-container">
         <h2 class="project-content-title">Process</h2>
         <p class="project-content-text">Days 1–2: The first day went into trying to set up the ZED 2i motion camera, and only on day two did it turn out the wrong cable was being used. In the meantime an Xbox Kinect was set up instead, but its hand tracking proved too buggy to rely on. Once someone pointed out the ZED 2i needs a special cable, it worked, and after debugging some settings in the Unity samples the build could start the next day. </p>
-        <p class="project-content-text">Day 3: With no prior experience in object tracking, the tracking caused too many problems, so the project pivoted to coding visuals driven by sound instead. github</p>
+        <p class="project-content-text">Day 3: With no prior experience in object tracking, the tracking caused too many problems, so the project pivoted to coding visuals driven by sound instead.</p>
         <figure class="project-content-figure-container">
-            <video src="../../images/20260311_150725.webm" loop muted autoplay class="project-gif"></video>
+            <video src="../../images/Example.webm" class="project-gif" id="project-video" controls></video>
         </figure>
         <p class="project-content-text">Day 4: Teacher-provided code was extended with values controlling shape and color, mapping red to bass, green to peak and blue to 1 so the shader's color shifts with the music; the shader uses multiply nodes to intensify the color. Two snags came up: Unity's camera disables post-processing, so the color emission wasn't visible in the game scene, and flipping the shaders (originally meant to make the plane glow) gave a much better effect. Confidence in the sound-driven visuals stayed limited because testing had to go through a virtual audio cable. </p>
-        <p class="project-content-text">Days 4–5: Hand tracking still wouldn't work because the MediaPipe solutions were deprecated, so it was handed to a teammate to do in TouchDesigner.</p>
+        <p class="project-content-text">Day 5: Hand tracking still wouldn't work because the MediaPipe solutions were deprecated, so it was handed to a teammate to do in TouchDesigner.</p>
     </div>
  </section>
  </div>   

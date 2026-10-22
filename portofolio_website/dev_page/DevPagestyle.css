@@ -26,30 +26,35 @@ h1,h2,h3,h4,h5,h6,p{
     font-family: "Unkempt", cursive;
 }
 html{
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    background-color: #2E2F31;
+
     --width: 825px;
     --projects-font-size: 14px;
     --project-text-font-size: 20px;
     --container-width: 850px;
     --width-aboutme: 400px;
-    --height: calc((747px / 737px) * var(--width-aboutme));
-
-    /* newly variable-ized values (previously hardcoded, now scale per breakpoint) */
+    --height: calc(1.01357 * var(--width-aboutme));
     --aboutme-height: 1200px;
     --aboutme-name-size: 80px;
     --aboutme-name-margin: 60px;
-    --aboutme-offset: 650px; /* shared vertical anchor for the background box, selfie and list, kept in sync */
+    --aboutme-offset: 650px; 
     --selfie-left: 4px;
     --aboutme-list-right: -275px;
     --aboutme-list-font: 24px;
     --aboutme-home-icon-size: 50px;
     --aboutme-home-icon-margin: 10px;
-    --footer-list-gap: 200px;
+    --footer-list-gap: 150px;
     --icon-heart-size: 5500%;
     --icon-heart-top: 100px;
 }
 body {
     background-color: #2E2F31;
-     display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
     justify-content: center;
     position: relative;
 }
@@ -65,11 +70,14 @@ body {
 }
 #aboutme-main{
     overflow: hidden;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
 }
 .main-container-project{
     width: 98vw;
     height: 98vh;
+    height: 98dvh;
     background-color: #E9637C;
     display: flex;
     justify-content: center;
@@ -79,7 +87,13 @@ body {
 
 body::after{
     content: "";
-    background-image: url(../images/GrainTexture.avif);
+    background-image: url(../images/GrainTexture.png);
+    background-image: image-set(
+        url(../images/GrainTexture.avif) type("image/avif"),
+        url(../images/GrainTexture.png) type("image/png")
+    );
+    top: 0;
+    left: 0;
     height: 300%;
     width: 300%;
     opacity: 0.1;
@@ -160,33 +174,33 @@ nav {
     position: absolute;
     margin-left: var(--aboutme-home-icon-margin);
     top: 2%;
-    .home-icon-pink{
-        height: var(--aboutme-home-icon-size);
-        -webkit-animation: none !important;
-        animation: none !important;
-    }
 }
-.home-icon:hover{
-    .home-icon-yellow{
-        display: block;
-        -webkit-animation: fadeIn 0.5s;
-        animation: fadeIn 0.5s;
-    }
-    .home-icon-pink{
-        display: none;
-    }    
+#home-icon-aboutme .home-icon-pink{
+    height: var(--aboutme-home-icon-size);
+    -webkit-animation: none !important;
+    animation: none !important;
 }
-#home-icon-aboutme:hover{
-    .home-icon-yellow{
-        -webkit-animation: none !important;
-        animation: none !important;
-    }
+.home-icon:hover .home-icon-yellow{
+    display: block;
+    -webkit-animation: fadeIn 0.5s;
+    animation: fadeIn 0.5s;
+}
+.home-icon:hover .home-icon-pink{
+    display: none;
+}
+#home-icon-aboutme:hover .home-icon-yellow{
+    -webkit-animation: none !important;
+    animation: none !important;
 }
 .project-dropdown{
     float: left;
     overflow: hidden;
 }
 .dropdown-button{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0;
     border: none;
     outline: none;
     background-color: inherit;
@@ -198,24 +212,20 @@ nav {
     width: 60px;
     transition: width 0.2s ease-in-out;
 }
-.project-dropdown:hover{
-
-.dropdown-button{
+.project-dropdown:hover .dropdown-button{
     background-color: #E9637C;
     transition: width 0.5s ease-in-out;
     width: 120px;
 }
-     .project-list{
+.project-dropdown:hover .project-list{
     display: block;
     -webkit-animation: fadeInList 1s;
-        animation: fadeInList 1s;
+    animation: fadeInList 1s;
 }
-.project-list-item:hover{
+.project-dropdown:hover .project-list-item:hover{
     color: #E9637C;
 }
-}
 .project-list{
-    
     list-style: none;
     display: none;
     position: absolute;
@@ -227,7 +237,7 @@ nav {
     border: #E9637C 2px dotted;
     box-sizing: border-box;
     margin: 5px 0px;
-    width: 120px; 
+    width: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -269,7 +279,8 @@ nav {
 .aboutme-list-container{
     position: absolute;
     left: 70%;
-    rotate: -15deg;
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg);
     top: var(--aboutme-offset);
 }
 .aboutme-list{
@@ -279,7 +290,7 @@ nav {
     font-size: var(--aboutme-list-font);
 }
 .aboutme-list-item{
-    padding: none;
+    padding: 0;
 }
 #name{
     left: var(--aboutme-name-margin);
@@ -299,17 +310,19 @@ nav {
     margin: 10px;
     margin-top: 45px;
     max-width: 30%;
-    aspect-ratio: 11/6;
+    min-width: 30%;
+    height: calc(100% - 55px);
     overflow-y: auto;
 }
 #middle-section{
     max-width: 40%;
     margin: 45px -10px;
     margin-bottom: 10px;
-} 
-
+}
 
 .project-content-container{
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
     min-height: 100%;
     max-width: 100%;
@@ -321,19 +334,23 @@ nav {
     gap: 1px;
 }
 #left-container{
-   border-top-left-radius: 6px; 
-   border-bottom-left-radius: 6px; 
+   border-top-left-radius: 6px;
+   border-bottom-left-radius: 6px;
 }
 #middle-container{
     border-left: dashed #E9637C 5px;
     border-right: dashed #E9637C 5px;
 }
 #right-container{
-   border-top-right-radius: 6px; 
-   border-bottom-right-radius: 6px; 
+   border-top-right-radius: 6px;
+   border-bottom-right-radius: 6px;
 }
 .project-content-title{
     font-size: calc(var(--project-text-font-size)*2);
+    align-self: center;
+}
+.learning-title{
+    font-size: calc(var(--project-text-font-size)*1.25);
     align-self: center;
 }
 .project-content-text{
@@ -346,9 +363,11 @@ nav {
     align-self: center;
     width: 90%;
     aspect-ratio: 5/3;
-    background-color: #E9637C;
     overflow: hidden;
     align-items: center;
+}
+#cpp-concept{
+    overflow:visible;
 }
 .github-link{
     width: inherit;
@@ -361,30 +380,40 @@ nav {
     position: absolute;
     aspect-ratio: 11/6;
     display: flex;
-    .left-container{
-        justify-self: left;
-        width: 45%;
-        background-color: #FED4CB;
-        box-sizing: border-box;
-        height: inherit;
-        border: solid #2E2F31 5px;
-        border-radius: 8px;
-    }
-    .middle-container{
-        justify-self: center;
-        width: 10%;
-        box-sizing: border-box;
-        height: inherit;
-    }
-    .right-container{
-        justify-self: right;
-        width: 45%;
-        background-color: #FED4CB;
-        box-sizing: border-box;
-        height: inherit;
-        border: solid #2E2F31 5px;
-        border-radius: 8px;
-    }
+}
+.big-projects-container .left-container{
+    justify-self: left;
+   width: 45%;
+    background-color: #FED4CB;
+    box-sizing: border-box;
+    height: inherit;
+    border: solid #2E2F31 5px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+.big-projects-container .middle-container{
+    justify-self: center;
+    width: 10%;
+    box-sizing: border-box;
+    height: inherit;
+}
+.big-projects-container .right-container{
+    justify-self: right;
+    width: 45%;
+    background-color: #FED4CB;
+    box-sizing: border-box;
+    height: inherit;
+    border: solid #2E2F31 5px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
 .title-container{
     position: absolute;
@@ -395,16 +424,16 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    .dev-title{
-        color:#E9637C;
-        text-align: center;
-        font-size: calc(var(--width)/(5/1)/1.5);
-    }
+}
+.title-container .dev-title{
+    color:#E9637C;
+    text-align: center;
+    font-size: calc(var(--width)/(5/1)/1.5);
 }
 .small-projects-container{
     position: absolute;
     /*11, 7.116, 5.259 = 4 projects, 6 projects, 8 projects*/
-    aspect-ratio:11/6;
+    height: calc(var(--container-width) / (11/6));
     width: inherit;
     margin: 10px;
     margin-top: calc(var(--width)/(11/8.2) + 45px);
@@ -413,23 +442,20 @@ nav {
     flex-wrap: wrap;
     flex-direction: column;
     gap: calc(var(--width)*0.05) calc(var(--width)*0.1);
-    .project-container{
-        background-color: #FED4CB;
-        width: 45%;
-        aspect-ratio: 5.45/3;
-        box-sizing: border-box;
-        border: solid #2E2F31 5px;
-        border-radius: 8px;
-        position: relative;
-        overflow: hidden;
-    }
 }
-#scifi-church-video{
-            width: 105%;
-            box-sizing: border-box;
-            position: absolute;
-            object-fit: fill;
-        }
+.small-projects-container .project-container{
+    background-color: #FED4CB;
+    width: 45%;
+    aspect-ratio: 5.45/3;
+    box-sizing: border-box;
+    border: solid #2E2F31 5px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
 .project-text{
     position:absolute;
     bottom: 0px;
@@ -442,7 +468,7 @@ nav {
     url(../cursor_cat/YellowPointerMouseSmall.webp),
     url(../cursor_cat/YellowPointerMouseSmall.png),
     pointer;
-        }
+}
 .project-title-text{
     background-color: rgba(46, 47, 49, 0.6);
     width: 100%;
@@ -458,19 +484,52 @@ nav {
     url(../cursor_cat/YellowPointerMouseSmall.webp),
     url(../cursor_cat/YellowPointerMouseSmall.png),
     pointer;
-        }
+}
 .project-video{
     cursor: url(../cursor_cat/LinkCursorYellow.cur),
     url(../cursor_cat/YellowPointerMouseSmall.webp),
     url(../cursor_cat/YellowPointerMouseSmall.png),
     pointer;
+    width: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    object-fit: fill;
+}
+#scifi-church-video{
+    width: 105%;
+}
+#cpp-logo{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
 }
 .project-gif{
     width: 110%;
 }
+#project-video{
+    z-index: 1;    
+    height: 100%;
+    width: 100%;
+    cursor: url(../cursor_cat/LinkCursorYellow.cur),
+    url(../cursor_cat/YellowPointerMouseSmall.webp),
+    url(../cursor_cat/YellowPointerMouseSmall.png),
+    pointer;
+}
+#galactic-ricochet{
+    width: 100%;
+    height: auto;
+}
+#cpp-concept-image{
+    height: 100%;
+    width: 100%;
+}
 #github-link{
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .footer{
     width: var(--container-width);
@@ -496,42 +555,39 @@ nav {
 }
 .footer-contact{
     margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .icon-heart{
-   
     position: absolute;
     top: var(--icon-heart-top);
     color: #FED4CB;
     left: 50%;
+    -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
-   font-family: "iconics";
-      font-style: normal;
-      font-weight: normal;
-     
-      display: inline-block;
-      text-decoration: inherit;
-      width: 1em;
-      text-align: center;
-      /* opacity: .8; */
-     
-      /* For safety - reset parent styles, that can break glyph codes*/
-      font-variant: normal;
-      text-transform: none;
-     
-      /* fix buttons height, for twitter bootstrap */
-      line-height: 1em;
-     
-      /* Animation center compensation - margins should be symmetric */
-      /* remove if not needed */
+    font-family: "iconics";
+    font-style: normal;
+    font-weight: normal;
 
-     
-      /* You can be more comfortable with increased icons size */
-       font-size: var(--icon-heart-size); 
-     
-      /* Font smoothing. That was taken from TWBS */
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-     
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    text-align: center;
+    /* opacity: .8; */
+
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
+
+    /* fix buttons height, for twitter bootstrap */
+    line-height: 1em;
+
+    font-size: var(--icon-heart-size);
+
+    /* Font smoothing. That was taken from TWBS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 .icon-github{
     color: #E9637C;
@@ -540,93 +596,82 @@ nav {
     url(../cursor_cat/YellowPointerMouseSmall.png),
     pointer;
     font-family: "iconics";
-      font-style: normal;
-      font-weight: normal;
-     
-      display: inline-block;
-      text-decoration: inherit;
-      width: 1em;
-      text-align: center;
-      /* opacity: .8; */
-     
-      /* For safety - reset parent styles, that can break glyph codes*/
-      font-variant: normal;
-      text-transform: none;
-     
-      /* fix buttons height, for twitter bootstrap */
-      line-height: 1em;
-     
-      /* Animation center compensation - margins should be symmetric */
-      /* remove if not needed */
-     
-      /* You can be more comfortable with increased icons size */
-       font-size: 300%; 
-     
-      /* Font smoothing. That was taken from TWBS */
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-weight: normal;
+
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    text-align: center;
+    /* opacity: .8; */
+
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
+
+    /* fix buttons height, for twitter bootstrap */
+    line-height: 1em;
+
+    font-size: 300%;
+
+    /* Font smoothing. That was taken from TWBS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-footer{
+    color: #E9637C;
+    cursor: url(../cursor_cat/LinkCursorYellow.cur),
+    url(../cursor_cat/YellowPointerMouseSmall.webp),
+    url(../cursor_cat/YellowPointerMouseSmall.png),
+    pointer;
+    font-family: "iconics";
+    font-style: normal;
+    font-weight: normal;
+
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    text-align: center;
+    /* opacity: .8; */
+
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
+
+    /* fix buttons height, for twitter bootstrap */
+    line-height: 1em;
+
+    font-size: 150%;
+
+    /* Font smoothing. That was taken from TWBS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @font-face {
-      font-family: 'iconics';
-      src: url(../font/fontello-6e55edc7/font/iconics.woff2);
-      src: url(../font/fontello-6e55edc7/font/iconics.eot) format('embedded-opentype'),
-           url(../font/fontello-6e55edc7/font/iconics.woff) format('woff'),
-           url(../font/fontello-6e55edc7/font/iconics.ttf) format('truetype'),
-           url(../font/fontello-6e55edc7/font/iconics.svg) format('svg');
-      font-weight: normal;
-      font-style: normal;
-    }
+    font-family: 'iconics';
+    src: url(../font/fontello-6e55edc7/font/iconics.woff2) format('woff2'),
+         url(../font/fontello-6e55edc7/font/iconics.woff) format('woff'),
+         url(../font/fontello-6e55edc7/font/iconics.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 @-webkit-keyframes fadeIn{
     from {opacity: 0; height: 30px;}
     to {opacity: 1; height: 50px;}
 }
 @keyframes fadeIn{
-   from {opacity: 0; height: 30px;}
+    from {opacity: 0; height: 30px;}
     to {opacity: 1; height: 50px;}
 }
 @-webkit-keyframes HeightFix{
-   from {height: 50px;}
+    from {height: 50px;}
     to {height: 30px;}
 }
 @keyframes HeightFix{
-   from {height: 50px;}
+    from {height: 50px;}
     to {height: 30px;}
 }
 @-webkit-keyframes fadeInList{
@@ -654,7 +699,7 @@ nav {
         --aboutme-list-font: 22px;
         --aboutme-home-icon-size: 44px;
         --aboutme-home-icon-margin: 9px;
-        --footer-list-gap: 176px;
+        --footer-list-gap: 126px;
         --icon-heart-size: 4832%;
         --icon-heart-top: 88px;
     }
@@ -674,7 +719,7 @@ nav {
         --aboutme-list-font: 20px;
         --aboutme-home-icon-size: 38px;
         --aboutme-home-icon-margin: 8px;
-        --footer-list-gap: 152px;
+        --footer-list-gap: 102px;
         --icon-heart-size: 4169%;
         --icon-heart-top: 76px;
     }
@@ -696,7 +741,7 @@ nav {
         --aboutme-list-font: 16px;
         --aboutme-home-icon-size: 32px;
         --aboutme-home-icon-margin: 6px;
-        --footer-list-gap: 127px;
+        --footer-list-gap: 77px;
         --icon-heart-size: 3498%;
         --icon-heart-top: 64px;
     }
@@ -723,7 +768,7 @@ nav {
         --aboutme-list-font: 16px;
         --aboutme-home-icon-size: 26px;
         --aboutme-home-icon-margin: 5px;
-        --footer-list-gap: 103px;
+        --footer-list-gap: 53px;
         --icon-heart-size: 2833%;
         --icon-heart-top: 52px;
     }
@@ -731,7 +776,9 @@ nav {
         padding: 0px 40px;
     }
     .aboutme-list-container{
-        rotate: none;
+        /* [compat] was "rotate: none" */
+        -webkit-transform: none;
+        transform: none;
     }
     h1,h2,h3,h4,h5,h6,p{
         font-family: Arial, Helvetica, sans-serif;
@@ -751,14 +798,14 @@ nav {
         --aboutme-list-font: 12px;
         --aboutme-home-icon-size: 20px;
         --aboutme-home-icon-margin: 4px;
-        --footer-list-gap: 50px;
+        --footer-list-gap: 20px;
         --icon-heart-size: 2167%;
         --icon-heart-top: 39px;
     }
     .list-item{
         padding: 0px 20px;
     }
-    .project-title-text{    
+    .project-title-text{
         padding-bottom: 0px;
         font-size: 10px;
     }
@@ -780,7 +827,7 @@ nav {
         --aboutme-list-font: 9px;
         --aboutme-home-icon-size: 20px;
         --aboutme-home-icon-margin: 3px;
-        --footer-list-gap: 30px;
+        --footer-list-gap: 10px;
         --icon-heart-size: 1502%;
         --icon-heart-top: 27px;
     }
@@ -802,7 +849,7 @@ nav {
         --aboutme-list-font: 10px;
         --aboutme-home-icon-size: 20px;
         --aboutme-home-icon-margin: 2px;
-        --footer-list-gap: 10px;
+        --footer-list-gap: 5px;
         --icon-heart-size: 1166%;
         --icon-heart-top: 21px;
     }
@@ -816,18 +863,17 @@ nav {
     .code-link-container:hover{
         width: 80px;
         font-size: inherit;
-            transition: font-size 0.2s ease-in-out;
+        transition: font-size 0.2s ease-in-out;
     }
     .dropdown-button{
         width: 40px;
         font-size: 10px;
     }
-    .project-dropdown:hover{
-        .dropdown-button{
-            width: 80px;
-            font-size: inherit;
-            transition: font-size 0.2s ease-in-out;
-        }
+    /* [compat] CSS nesting flattened */
+    .project-dropdown:hover .dropdown-button{
+        width: 80px;
+        font-size: inherit;
+        transition: font-size 0.2s ease-in-out;
     }
     .project-list-item{
         width: 80px;

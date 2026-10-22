@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../DevPagestyle.css">
+    <title>Tower defense</title>
+    <link rel="icon" href="../../images/ComissionedIconOutHome.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div class="main-container-project">
+ <header>
+    
+    <nav class="navbar">
+        <ul class="list">           
+            <li class="list-item"><a class="code-link" href="../../aboutMe.html"><div class="code-link-container">Me</div></a></li>
+            <li class="list-item">
+                <div class="home-icon">
+                    <a href="../DevHomepage.html">
+                        <img class="home-icon-pink" src="../../images/ComissionedIconOutHome.webp" alt="homepage">
+                        <img class="home-icon-yellow" src="../../images/ComissionedIconOnHome.webp" alt="homepage">
+                    </a>
+                </div>
+            </li>
+            <li class="list-item">
+                <div class="project-dropdown">
+                    <Button class="dropdown-button">Projects <i class="fa fa-caret-down"></i></Button>
+                        <ul class="project-list">
+                           <li class="project-list-item"><a class="project-link" href="TMoCR.html">Current Project</a></li>
+                           <li class="project-list-item"><a class="project-link" href="GalacticRicochet.html">Galactic ricochet</a></li>
+                           <li class="project-list-item"><a class="project-link" href="ScifiChurch.html">Scifi church</a></li>
+                           <li class="project-list-item"><a class="project-link" href="CPPBasic.html">C++ Basics</a></li>
+                           <li class="project-list-item"><a class="project-link" href="VerticalSlice.html">Vertical Slice</a></li>
+                           <li class="project-list-item"><a class="project-link" href="TowerDefense.html">Tower defense</a></li>
+                        </ul>
+                </div>
+            </li>
+        </ul>
+    </nav>
+ </header>
+ <section class="project-sections" id="right-section">
+    <div class="project-content-container" id="left-container">
+        <h2 class="project-content-title">Art assets</h2>
+        <figure class="project-content-figure-container" id="cpp-concept">
+              <img src="../../images/TDSheet1.webp" class="project-gif" id="cpp-concept-image"></img>
+        </figure>
+        <p class="project-content-text">I made these assets for my mechanics</p>
+        <figure class="project-content-figure-container" id="cpp-concept">
+              <img src="../../images/TDSheet2.webp" class="project-gif" id="cpp-concept-image"></img>
+        </figure>
+        <a href="https://github.com/PennydeBoer/BO-TD" class="project-content-text" id="github-link">
+            <i class="icon-github">&#xf09b;</i>
+        </a>
+    </div>
+ </section>
+ <section class="project-sections" id="middle-section">
+    <div class="project-content-container" id="middle-container">
+        <h2 class="project-content-title">Final Product</h2>
+        <figure class="project-content-figure-container">
+              <video src="../../images/TowerDefense.webm" controls class="project-gif" id="project-video"></video>
+        </figure>
+        <p class="project-content-text">The game has two characters and the with can change attacks while the jellyfish buffs characters</p>
+        <h4 class="learning-title"> What I learned from this project </h4>
+        <p class="project-content-text">art, changing attacks, projectile tracking, buffing characters, wavespawning and pathfollowing</p>
+    </div>
+ </section>
+ <section class="project-sections" id="left-section">
+    <div class="project-content-container" id="right-container">
+        <h2 class="project-content-title">Process</h2>
+        <p class="project-content-text">First i made a wave spawner, then i made a path follwing system that follows waypoints. When the enemy reaches the end point the player takes damage</p>
+        <p class="project-content-text">Then i made a character that could shoot projectiles, after a while i figured out how to make the projectile follow the enemy in a certain range.</p>
+        <p class="project-content-text">And the second character sends a signal to increase the damage of the other characters in range</p>
+    </div>
+ </section>
+ </div>   
+ 
+</body>
+</html>

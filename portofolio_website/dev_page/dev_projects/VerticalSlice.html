@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../DevPagestyle.css">
+    <title>Vertical slice</title>
+    <link rel="icon" href="../../images/ComissionedIconOutHome.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div class="main-container-project">
+ <header>
+    
+    <nav class="navbar">
+        <ul class="list">           
+            <li class="list-item"><a class="code-link" href="../../aboutMe.html"><div class="code-link-container">Me</div></a></li>
+            <li class="list-item">
+                <div class="home-icon">
+                    <a href="../DevHomepage.html">
+                        <img class="home-icon-pink" src="../../images/ComissionedIconOutHome.webp" alt="homepage">
+                        <img class="home-icon-yellow" src="../../images/ComissionedIconOnHome.webp" alt="homepage">
+                    </a>
+                </div>
+            </li>
+            <li class="list-item">
+                <div class="project-dropdown">
+                    <Button class="dropdown-button">Projects <i class="fa fa-caret-down"></i></Button>
+                        <ul class="project-list">
+                           <li class="project-list-item"><a class="project-link" href="TMoCR.html">Current Project</a></li>
+                           <li class="project-list-item"><a class="project-link" href="GalacticRicochet.html">Galactic ricochet</a></li>
+                           <li class="project-list-item"><a class="project-link" href="ScifiChurch.html">Scifi church</a></li>
+                           <li class="project-list-item"><a class="project-link" href="CPPBasic.html">C++ Basics</a></li>
+                           <li class="project-list-item"><a class="project-link" href="VerticalSlice.html">Vertical Slice</a></li>
+                           <li class="project-list-item"><a class="project-link" href="TowerDefense.html">Tower defense</a></li>
+                        </ul>
+                </div>
+            </li>
+        </ul>
+    </nav>
+ </header>
+ <section class="project-sections" id="right-section">
+    <div class="project-content-container" id="left-container">
+        <h2 class="project-content-title">Placing system</h2>
+        <p class="project-content-text">I made a placing system where the enemies have set places and the heroes also have set places</p>
+        <figure class="project-content-figure-container" id="cpp-concept">
+              <img src="../../images/placingsystemvs.webp" class="project-gif" id="cpp-concept-image"></img>
+        </figure>
+        <p class="project-content-text">It works by making a list with enemies with public transforms, then through a list of places you edit their position to the place they are assigned to. When an enemy dies you take it out of the list and run the system agan</p>
+        <a href="https://github.com/Ykada/Vertical_Slice/tree/main" class="project-content-text" id="github-link">
+            <i class="icon-github">&#xf09b;</i>
+        </a>
+    </div>
+ </section>
+ <section class="project-sections" id="middle-section">
+    <div class="project-content-container" id="middle-container">
+        <h2 class="project-content-title">Final Product</h2>
+        <figure class="project-content-figure-container">
+            <video src="../../images/VerticalSlice.webm" class="project-gif" id="project-video" controls></video>
+        </figure>
+        <p class="project-content-text">We had to remake darkest dungeon gameplay and i think it worked out quite well because i had two teamates that did nothing the whole period</p>
+        <h4 class="learning-title"> What I learned from this project </h4>
+        <p class="project-content-text">I learned how to make systems and to keep working on stuff even if it doesnt always work out how you want</p>
+    </div>
+ </section>
+ <section class="project-sections" id="left-section">
+    <div class="project-content-container" id="right-container">
+        <h2 class="project-content-title">Stat system</h2>
+         <p class="project-content-text">I also made a stat system</p>
+        <figure class="project-content-figure-container" id="cpp-concept">
+              <img src="../../images/setstatsvs.webp" class="project-gif" id="cpp-concept-image"></img>
+        </figure>
+        <p class="project-content-text">Put in the stats of the character in the serialize fields</p>
+    </div>
+ </section>
+ </div>   
+ 
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../DevPagestyle.css">
+    <title>Galactic ricochet</title>
+    <link rel="icon" href="../../images/ComissionedIconOutHome.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div class="main-container-project">
+ <header>
+    
+    <nav class="navbar">
+        <ul class="list">           
+            <li class="list-item"><a class="code-link" href="../../aboutMe.html"><div class="code-link-container">Me</div></a></li>
+            <li class="list-item">
+                <div class="home-icon">
+                    <a href="../DevHomepage.html">
+                        <img class="home-icon-pink" src="../../images/ComissionedIconOutHome.webp" alt="homepage">
+                        <img class="home-icon-yellow" src="../../images/ComissionedIconOnHome.webp" alt="homepage">
+                    </a>
+                </div>
+            </li>
+            <li class="list-item">
+                <div class="project-dropdown">
+                    <Button class="dropdown-button">Projects <i class="fa fa-caret-down"></i></Button>
+                        <ul class="project-list">
+                           <li class="project-list-item"><a class="project-link" href="TMoCR.html">Current Project</a></li>
+                           <li class="project-list-item"><a class="project-link" href="GalacticRicochet.html">Galactic ricochet</a></li>
+                           <li class="project-list-item"><a class="project-link" href="ScifiChurch.html">Scifi church</a></li>
+                           <li class="project-list-item"><a class="project-link" href="CPPBasic.html">C++ Basics</a></li>
+                           <li class="project-list-item"><a class="project-link" href="VerticalSlice.html">Vertical Slice</a></li>
+                           <li class="project-list-item"><a class="project-link" href="TowerDefense.html">Tower defense</a></li>
+                        </ul>
+                </div>
+            </li>
+        </ul>
+    </nav>
+ </header>
+ <section class="project-sections" id="right-section">
+    <div class="project-content-container" id="left-container">
+        <h2 class="project-content-title">Concept</h2>
+        <p class="project-content-text">Our teacher had us choose a feature to build. We chose to make a level builder</p>
+        <figure class="project-content-figure-container" id="cpp-concept">
+              <img src="../../images/designSketch.webp" class="project-gif" id="cpp-concept-image"></img>
+        </figure>
+        <p class="project-content-text">I made this prototype design for the feature, the github link is to the game design doc</p>
+        <a href="https://github.com/erwinhenraat/Galactic_Ricochet/blob/Feature/LevelBuilder/DOCS/GameDesign_LevelBuilder.md" class="project-content-text" id="github-link">
+            <i class="icon-github">&#xf09b;</i>
+        </a>
+    </div>
+ </section>
+ <section class="project-sections" id="middle-section">
+    <div class="project-content-container" id="middle-container">
+        <h2 class="project-content-title">Final Product</h2>
+        <figure class="project-content-figure-container">
+            <video src="../../images/GalacticRicochetNormal.webm" class="project-gif" id="project-video" controls></video>
+        </figure>
+        <p class="project-content-text">Me and Marcos made a placing system and saving system for our teacher's game</p>
+        <h4 class="learning-title"> What I learned from this project </h4>
+        <p class="project-content-text">I learned how to make a drag and drop system that has an overlap checker, naming conventions, working in a bigger group of people, getting a better understanding of gitflow, how to document better and how to save positions in a json/txt file</p>
+    </div>
+ </section>
+ <section class="project-sections" id="left-section">
+    <div class="project-content-container" id="right-container">
+        <h2 class="project-content-title">Process</h2>
+        <p class="project-content-text">I started by making a technical design (linked below) and started with a drag and drop system</p>
+        <a href="https://github.com/erwinhenraat/Galactic_Ricochet/blob/Feature/LevelBuilder/DOCS/TechnicalDesign.md" class="project-content-text" id="github-link">
+            <i class="icon-github">&#xe800;</i>Technical design
+        </a>
+        <p class="project-content-text">Then when i finished my drag and drop system i worked on assigning colors so they could be saved with tags</p>
+        <p class="project-content-text">I bug fixed Marcos's saving script and put it together with making in a playable scene</p>
+    </div>
+ </section>
+ </div>   
+ 
+</body>
+</html>
